@@ -17,9 +17,11 @@
 #include "TamFileEditor.h"
 #include "Poco/DateTimeFormat.h"
 #include "Poco/Timezone.h"
+#include "iBotDataModule.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "mtkIniFileC"
+#pragma link "TIntegerLabeledEdit"
 #pragma resource "*.dfm"
 
 TMainForm *MainForm;
@@ -113,4 +115,17 @@ void __fastcall TMainForm::MainPCChange(TObject *Sender)
     //Check what tb is open
 }
 
+
+void __fastcall TMainForm::DBGrid1DrawColumnCell(TObject *Sender, const TRect &Rect,
+          int DataCol, TColumn *Column, TGridDrawState State)
+{
+	if(Column->FieldName == "notes")
+    {
+    Column->Field->AsWideString;
+//	 	DBGrid1->Canvas->FillRect(Rect);
+//     	DBGrid1->Canvas->TextOut(Rect.Left + 3, Rect.Top + 3,
+//              Column->Field->AsString);
+    }
+}
+//---------------------------------------------------------------------------
 

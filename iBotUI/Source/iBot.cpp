@@ -6,6 +6,7 @@
 #include <Vcl.Themes.hpp>
 USEFORM("TMainForm.cpp", MainForm);
 USEFORM("Frames\TSQLiteDBFrame.cpp", SQLiteDBFrame); /* TFrame: File Type */
+USEFORM("iBotDataModule.cpp", DataModule1); /* TDataModule: File Type */
 //---------------------------------------------------------------------------
 #include "mtkUtils.h"
 #include "mtkVCLUtils.h"
@@ -107,6 +108,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->Title = "iBot";
         Application->ProcessMessages();
 		Application->CreateForm(__classid(TMainForm), &MainForm);
+		Application->CreateForm(__classid(TDataModule1), &DataModule1);
 		Application->Run();
 
         // Finish restarting process if needed

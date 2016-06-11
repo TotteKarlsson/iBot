@@ -37,6 +37,13 @@
 #include <Vcl.Menus.hpp>
 #include <Vcl.StdActns.hpp>
 #include <Vcl.ToolWin.hpp>
+#include "TIntegerLabeledEdit.h"
+#include <Data.Bind.Components.hpp>
+#include <Data.Bind.DBScope.hpp>
+#include <Data.Bind.EngExt.hpp>
+#include <Data.Bind.Grid.hpp>
+#include <Vcl.Bind.DBEngExt.hpp>
+#include <Vcl.Bind.Navigator.hpp>
 
 using mtk::Property;
 using mtk::SQLite;
@@ -77,6 +84,23 @@ class TMainForm : public TRegistryForm
     TToolButton *ToolButton1;
     TImageList *ImageList1;
     TTimer *ShutDownTimer;
+	TGroupBox *GroupBox1;
+	TIntegerLabeledEdit *mSlot1E;
+	TIntegerLabeledEdit *mSlot2E;
+	TIntegerLabeledEdit *mSlot3E;
+	TIntegerLabeledEdit *mSlot4E;
+	TButton *Button1;
+	TButton *Button2;
+	TButton *Button3;
+	TButton *Button4;
+	TPageControl *PageControl1;
+	TTabSheet *TabSheet1;
+	TTabSheet *TabSheet2;
+	TPageControl *PageControl2;
+	TTabSheet *TabSheet3;
+	TDBGrid *DBGrid1;
+	TDBNavigator *DBNavigator1;
+	TBindSourceDB *BindSourceDB1;
     void __fastcall FormKeyDown(TObject *Sender, WORD &Key, TShiftState Shift);
     void __fastcall FormCreate(TObject *Sender);
 
@@ -92,6 +116,8 @@ class TMainForm : public TRegistryForm
 
     void __fastcall LogLevelCBChange(TObject *Sender);
     void __fastcall MainPCChange(TObject *Sender);
+	void __fastcall DBGrid1DrawColumnCell(TObject *Sender, const TRect &Rect, int DataCol,
+          TColumn *Column, TGridDrawState State);
 
     private:	// User declarations
         bool                                            gCanClose;
