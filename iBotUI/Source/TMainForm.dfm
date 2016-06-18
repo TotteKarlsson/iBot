@@ -2,8 +2,8 @@ object MainForm: TMainForm
   Left = 0
   Top = 0
   Caption = 'iBot - Image & Stain'
-  ClientHeight = 721
-  ClientWidth = 928
+  ClientHeight = 750
+  ClientWidth = 943
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -23,8 +23,8 @@ object MainForm: TMainForm
   TextHeight = 13
   object Splitter1: TSplitter
     Left = 0
-    Top = 487
-    Width = 928
+    Top = 516
+    Width = 943
     Height = 3
     Cursor = crVSplit
     Align = alBottom
@@ -33,25 +33,23 @@ object MainForm: TMainForm
   end
   object BottomPanel: TPanel
     Left = 0
-    Top = 490
-    Width = 928
+    Top = 519
+    Width = 943
     Height = 212
     Align = alBottom
     TabOrder = 0
-    ExplicitWidth = 1168
     object Panel4: TPanel
       Left = 1
       Top = 1
-      Width = 926
+      Width = 941
       Height = 210
       Align = alClient
       Caption = 'Panel4'
       TabOrder = 0
-      ExplicitWidth = 1166
       object infoMemo: TMemo
         Left = 1
         Top = 22
-        Width = 924
+        Width = 939
         Height = 187
         Align = alClient
         Font.Charset = DEFAULT_CHARSET
@@ -63,12 +61,11 @@ object MainForm: TMainForm
         PopupMenu = PopupMenu1
         ScrollBars = ssBoth
         TabOrder = 0
-        ExplicitWidth = 1164
       end
       object ToolBar2: TToolBar
         Left = 1
         Top = 1
-        Width = 924
+        Width = 939
         Height = 21
         AutoSize = True
         ButtonHeight = 21
@@ -109,114 +106,257 @@ object MainForm: TMainForm
   object TopPanel: TPanel
     Left = 0
     Top = 0
-    Width = 928
-    Height = 487
+    Width = 943
+    Height = 516
     Align = alClient
     TabOrder = 1
-    ExplicitLeft = 1
-    ExplicitTop = -1
-    ExplicitWidth = 1168
     object PageControl1: TPageControl
       Left = 1
       Top = 1
-      Width = 926
-      Height = 485
-      ActivePage = TabSheet2
+      Width = 941
+      Height = 514
+      ActivePage = TabSheet5
       Align = alClient
       TabOrder = 0
-      ExplicitWidth = 1166
+      object TabSheet4: TTabSheet
+        Caption = 'Status'
+        ImageIndex = 2
+      end
       object TabSheet1: TTabSheet
-        Caption = 'Sessions'
-        ExplicitLeft = -92
-        ExplicitTop = -40
-        ExplicitWidth = 281
-        ExplicitHeight = 165
+        Caption = 'Session'
         object GroupBox1: TGroupBox
-          Left = 16
-          Top = 64
-          Width = 185
+          Left = 13
+          Top = 135
+          Width = 420
           Height = 193
-          Caption = 'Slots'
+          Caption = 'Slots (ribbon id'#39's)'
           TabOrder = 0
-          object mSlot1E: TIntegerLabeledEdit
-            Left = 18
+          object mCBSlot1: TComboBox
+            Left = 16
             Top = 32
-            Width = 121
+            Width = 145
             Height = 21
-            EditLabel.Width = 27
-            EditLabel.Height = 13
-            EditLabel.Caption = 'Slot 1'
             TabOrder = 0
-            Text = '-1'
-            Value = -1
+            Text = 'mCBSlot1'
           end
-          object mSlot2E: TIntegerLabeledEdit
-            Left = 18
-            Top = 75
-            Width = 121
+          object mCBSlot2: TComboBox
+            Left = 16
+            Top = 73
+            Width = 145
             Height = 21
-            EditLabel.Width = 27
-            EditLabel.Height = 13
-            EditLabel.Caption = 'Slot 2'
             TabOrder = 1
-            Text = '-1'
-            Value = -1
+            Text = 'ComboBox1'
           end
-          object mSlot3E: TIntegerLabeledEdit
-            Left = 18
-            Top = 118
-            Width = 121
+          object mCBSlot3: TComboBox
+            Left = 16
+            Top = 114
+            Width = 145
             Height = 21
-            EditLabel.Width = 27
-            EditLabel.Height = 13
-            EditLabel.Caption = 'Slot 3'
             TabOrder = 2
-            Text = '-1'
-            Value = -1
+            Text = 'ComboBox1'
           end
-          object mSlot4E: TIntegerLabeledEdit
-            Left = 18
-            Top = 161
-            Width = 121
+          object mCBSlot4: TComboBox
+            Left = 16
+            Top = 155
+            Width = 145
             Height = 21
-            EditLabel.Width = 27
-            EditLabel.Height = 13
-            EditLabel.Caption = 'Slot 4'
             TabOrder = 3
-            Text = '-1'
-            Value = -1
+            Text = 'ComboBox1'
           end
           object Button1: TButton
-            Left = 145
-            Top = 30
-            Width = 20
+            Left = 192
+            Top = 32
+            Width = 100
             Height = 25
-            Caption = '...'
+            Caption = 'Calibrate Slide'
             TabOrder = 4
           end
           object Button2: TButton
-            Left = 145
-            Top = 73
-            Width = 20
+            Left = 192
+            Top = 72
+            Width = 100
             Height = 25
-            Caption = '...'
+            Caption = 'Calibrate Slide'
             TabOrder = 5
           end
           object Button3: TButton
-            Left = 145
-            Top = 116
-            Width = 20
+            Left = 192
+            Top = 112
+            Width = 100
             Height = 25
-            Caption = '...'
+            Caption = 'Calibrate Slide'
             TabOrder = 6
           end
           object Button4: TButton
-            Left = 145
-            Top = 159
-            Width = 20
+            Left = 192
+            Top = 152
+            Width = 100
             Height = 25
-            Caption = '...'
+            Caption = 'Calibrate Slide'
             TabOrder = 7
+          end
+          object Button5: TButton
+            Left = 309
+            Top = 112
+            Width = 100
+            Height = 25
+            Caption = 'Map Slide'
+            TabOrder = 8
+          end
+          object Button6: TButton
+            Left = 309
+            Top = 152
+            Width = 100
+            Height = 25
+            Caption = 'Map Slide'
+            TabOrder = 9
+          end
+          object Button7: TButton
+            Left = 309
+            Top = 72
+            Width = 100
+            Height = 25
+            Caption = 'Map Slide'
+            TabOrder = 10
+          end
+          object Button8: TButton
+            Left = 309
+            Top = 32
+            Width = 100
+            Height = 25
+            Caption = 'Map Slide'
+            TabOrder = 11
+          end
+        end
+        object GroupBox4: TGroupBox
+          Left = 13
+          Top = 56
+          Width = 185
+          Height = 73
+          Caption = 'Select Tissue Block'
+          TabOrder = 1
+          object mBlocksCB: TDBLookupComboBox
+            Left = 16
+            Top = 29
+            Width = 145
+            Height = 21
+            KeyField = 'id'
+            ListField = 'id'
+            ListSource = atDM.blocksDataSource
+            TabOrder = 0
+            OnCloseUp = DBLookupComboBox5CloseUp
+          end
+        end
+        object GroupBox5: TGroupBox
+          Left = 13
+          Top = 3
+          Width = 420
+          Height = 47
+          Caption = 'ImageStain Session'
+          TabOrder = 2
+          object ComboBox1: TComboBox
+            Left = 16
+            Top = 16
+            Width = 145
+            Height = 21
+            TabOrder = 0
+            Text = 'ComboBox1'
+          end
+          object Button9: TButton
+            Left = 280
+            Top = 14
+            Width = 128
+            Height = 25
+            Caption = 'Select FromTemplate'
+            TabOrder = 1
+          end
+          object Button10: TButton
+            Left = 167
+            Top = 14
+            Width = 55
+            Height = 25
+            Caption = 'New'
+            TabOrder = 2
+          end
+        end
+      end
+      object TabSheet5: TTabSheet
+        Caption = 'Protocols'
+        ImageIndex = 2
+        object GroupBox7: TGroupBox
+          Left = 16
+          Top = 16
+          Width = 561
+          Height = 313
+          Caption = 'Slide 1 (make template)'
+          TabOrder = 0
+          object Label1: TLabel
+            Left = 13
+            Top = 24
+            Width = 58
+            Height = 13
+            Caption = 'Stain Round'
+          end
+          object ComboBox2: TComboBox
+            Left = 13
+            Top = 43
+            Width = 145
+            Height = 21
+            TabOrder = 0
+            Text = 'ComboBox2'
+          end
+          object Stains: TGroupBox
+            Left = 13
+            Top = 88
+            Width = 468
+            Height = 209
+            Caption = 'Stains'
+            TabOrder = 1
+            object Label2: TLabel
+              Left = 16
+              Top = 29
+              Width = 36
+              Height = 13
+              Caption = 'Species'
+            end
+            object Label3: TLabel
+              Left = 103
+              Top = 29
+              Width = 36
+              Height = 13
+              Caption = 'Primary'
+            end
+            object Label4: TLabel
+              Left = 222
+              Top = 29
+              Width = 58
+              Height = 13
+              Caption = 'FluoroPhore'
+            end
+            object ComboBox3: TComboBox
+              Left = 16
+              Top = 48
+              Width = 81
+              Height = 21
+              TabOrder = 0
+              Text = 'ComboBox3'
+            end
+            object ComboBox4: TComboBox
+              Left = 103
+              Top = 48
+              Width = 106
+              Height = 21
+              TabOrder = 1
+              Text = 'ComboBox4'
+            end
+            object ComboBox5: TComboBox
+              Left = 222
+              Top = 48
+              Width = 107
+              Height = 21
+              TabOrder = 2
+              Text = 'ComboBox5'
+            end
           end
         end
       end
@@ -225,47 +365,124 @@ object MainForm: TMainForm
         ImageIndex = 1
         ExplicitLeft = 0
         ExplicitTop = 0
-        ExplicitWidth = 1158
-        ExplicitHeight = 0
+        ExplicitWidth = 918
+        ExplicitHeight = 457
         object PageControl2: TPageControl
           Left = 0
           Top = 0
-          Width = 918
-          Height = 457
+          Width = 933
+          Height = 486
           ActivePage = TabSheet3
           Align = alClient
           TabOrder = 0
-          ExplicitWidth = 1158
+          ExplicitWidth = 918
+          ExplicitHeight = 457
           object TabSheet3: TTabSheet
-            Caption = 'Ribbons'
+            Caption = 'Blocks && Ribbons'
             ExplicitLeft = 0
             ExplicitTop = 0
-            ExplicitWidth = 1150
-            ExplicitHeight = 0
-            object DBGrid1: TDBGrid
-              Left = 16
-              Top = 49
-              Width = 568
-              Height = 120
-              DataSource = DataModule1.ribbonsDSource
+            ExplicitWidth = 910
+            ExplicitHeight = 429
+            object ScrollBox1: TScrollBox
+              Left = 0
+              Top = 0
+              Width = 925
+              Height = 458
+              Align = alClient
               TabOrder = 0
-              TitleFont.Charset = DEFAULT_CHARSET
-              TitleFont.Color = clWindowText
-              TitleFont.Height = -11
-              TitleFont.Name = 'Tahoma'
-              TitleFont.Style = []
-              OnDrawColumnCell = DBGrid1DrawColumnCell
-            end
-            object DBNavigator1: TDBNavigator
-              Left = 16
-              Top = 18
-              Width = 240
-              Height = 25
-              DataSource = DataModule1.ribbonsDSource
-              VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbEdit, nbPost, nbCancel, nbRefresh, nbApplyUpdates, nbCancelUpdates]
-              ParentShowHint = False
-              ShowHint = True
-              TabOrder = 1
+              ExplicitWidth = 910
+              ExplicitHeight = 429
+              object GroupBox2: TGroupBox
+                Left = 0
+                Top = 201
+                Width = 904
+                Height = 281
+                Align = alTop
+                Caption = 'Ribbons'
+                TabOrder = 0
+                ExplicitWidth = 889
+                object DBNavigator1: TDBNavigator
+                  Left = 23
+                  Top = 24
+                  Width = 240
+                  Height = 25
+                  DataSource = atDM.mRibbonDSource
+                  TabOrder = 0
+                end
+                object DBGrid1: TDBGrid
+                  Left = 23
+                  Top = 55
+                  Width = 320
+                  Height = 120
+                  DataSource = atDM.mRibbonDSource
+                  TabOrder = 1
+                  TitleFont.Charset = DEFAULT_CHARSET
+                  TitleFont.Color = clWindowText
+                  TitleFont.Height = -11
+                  TitleFont.Name = 'Tahoma'
+                  TitleFont.Style = []
+                end
+              end
+              object GroupBox3: TGroupBox
+                Left = 0
+                Top = 0
+                Width = 904
+                Height = 201
+                Align = alTop
+                Caption = 'Blocks'
+                TabOrder = 1
+                ExplicitWidth = 889
+                object DBGrid2: TDBGrid
+                  Left = 23
+                  Top = 57
+                  Width = 568
+                  Height = 128
+                  DataSource = atDM.blocksDataSource
+                  Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+                  TabOrder = 0
+                  TitleFont.Charset = DEFAULT_CHARSET
+                  TitleFont.Color = clWindowText
+                  TitleFont.Height = -11
+                  TitleFont.Name = 'Tahoma'
+                  TitleFont.Style = []
+                  Columns = <
+                    item
+                      Expanded = False
+                      FieldName = 'id'
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'status'
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'created'
+                      Width = 135
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'modified'
+                      Width = 78
+                      Visible = True
+                    end
+                    item
+                      Expanded = False
+                      FieldName = 'label'
+                      Visible = True
+                    end>
+                end
+                object DBNavigator2: TDBNavigator
+                  Left = 23
+                  Top = 26
+                  Width = 240
+                  Height = 25
+                  DataSource = atDM.blocksDataSource
+                  TabOrder = 1
+                end
+              end
             end
           end
         end
@@ -274,11 +491,10 @@ object MainForm: TMainForm
   end
   object SB: TStatusBar
     Left = 0
-    Top = 702
-    Width = 928
+    Top = 731
+    Width = 943
     Height = 19
     Panels = <>
-    ExplicitWidth = 1168
   end
   object ActionList1: TActionList
     Images = ImageList1
@@ -356,7 +572,7 @@ object MainForm: TMainForm
     Left = 181
     Top = 424
     Bitmap = {
-      494C010101000800000120002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010101000800340120002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000002000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -890,11 +1106,5 @@ object MainForm: TMainForm
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000}
-  end
-  object BindSourceDB1: TBindSourceDB
-    DataSet = DataModule1.ribbonsCDS
-    ScopeMappings = <>
-    Left = 608
-    Top = 424
   end
 end

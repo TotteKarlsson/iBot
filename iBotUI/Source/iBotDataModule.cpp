@@ -15,15 +15,5 @@ __fastcall TDataModule1::TDataModule1(TComponent* Owner)
 {
 }
 
-//---------------------------------------------------------------------------
-void __fastcall TDataModule1::ribbonsCDSnotesGetText(TField *Sender, UnicodeString &Text,
-          bool DisplayText)
-{
-//	TField* field = dynamic_cast<TField*>(Sender);
-//
-//	if(field == ribbonsCDSnotes)
-//	{
-//		Text = field->AsString;
-//	}
-}
+
 

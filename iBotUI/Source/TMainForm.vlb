@@ -1,10 +1,10 @@
 ﻿[infoMemo]
-Coordinates=343,742,62,51
+Coordinates=382,312,62,51
 LayerNames=OrdersLayer
 
 []
-Coordinates=180,1,56,51
-Visible=False
+Coordinates=603,193,70,51
+Visible=True
 LayerNames=OrdersLayer
 
 [AmazonDataModule.orders]
@@ -15,35 +15,35 @@ Coordinates=173,10,127,303
 Visible=False
 
 [BottomPanel]
-Coordinates=10,742,77,51
+Coordinates=10,312,77,51
 LayerNames=OrdersLayer
 
 [SB]
-Coordinates=1029,658,41,51
+Coordinates=454,312,41,51
 LayerNames=OrdersLayer
 
 [LogLevelCB]
-Coordinates=289,402,84,87
+Coordinates=10,215,84,87
 LayerNames=OrdersLayer
 
 [ToolBar2]
-Coordinates=1000,994,58,33
+Coordinates=217,373,58,33
 LayerNames=OrdersLayer
 
 [Splitter1]
-Coordinates=10,994,55,33
+Coordinates=152,373,55,33
 LayerNames=OrdersLayer
 
 [TopPanel]
-Coordinates=824,826,60,51
+Coordinates=505,312,60,51
 LayerNames=OrdersLayer
 
 [Panel4]
-Coordinates=530,580,47,51
+Coordinates=575,312,47,51
 LayerNames=OrdersLayer
 
 [ToolButton4]
-Coordinates=1201,910,74,33
+Coordinates=363,373,74,33
 LayerNames=OrdersLayer
 
 [AmazonDataModule.OrderItemsCDS]
@@ -81,7 +81,7 @@ Coordinates=1160,70,92,231
 Visible=False
 
 [ToolButton1]
-Coordinates=910,331,74,33
+Coordinates=447,373,74,33
 LayerNames=OrdersLayer
 
 [AmazonDataModule.SalesByStateQ]
@@ -209,66 +209,170 @@ LayerNames=OrdersLayer
 [File1]
 LayerNames=OrdersLayer
 
-[Button4]
-Coordinates=116,204,53,51
-
 [PageControl2]
-Coordinates=717,78,81,33
+Coordinates=10,416,81,33
 
 [PageControl1]
-Coordinates=717,133,81,33
+Coordinates=597,373,81,33
 
 [TabSheet3]
-Coordinates=547,188,66,33
+Coordinates=76,373,66,33
 Visible=True
-
-[Button2]
-Coordinates=446,342,53,51
 
 [TabSheet1]
-Coordinates=547,243,66,33
-
-[mSlot4E]
-Coordinates=47,204,55,51
+Coordinates=688,373,66,33
 
 [TabSheet2]
-Coordinates=547,298,66,33
-
-[DataModule1.ribbonsDS]
-Coordinates=254,184,133,177
-
-[Button1]
-Coordinates=151,434,53,51
-
-[mSlot2E]
-Coordinates=185,204,55,51
+Coordinates=632,312,66,33
 
 [GroupBox1]
-Coordinates=446,419,70,51
+Coordinates=675,215,70,51
 
-[Button3]
-Coordinates=446,265,53,51
+[GroupBox3]
+Coordinates=259,215,70,51
 
-[DataModule1.ribbonsCDS]
-Coordinates=717,1,92,195
-Visible=False
+[DBGrid2]
+Coordinates=531,373,56,33
 
-[mSlot3E]
-Coordinates=220,434,55,51
+[GroupBox2]
+Coordinates=339,215,70,51
 
-[mSlot1E]
-Coordinates=446,188,55,51
+[ScrollBox1]
+Coordinates=285,373,68,33
 
-[DataModule1.ribbonsDSource]
+[DataModule1.]
 Visible=True
-Coordinates=102,10,161,33
+Coordinates=283,10,133,177
 
-[DBGrid1]
-Coordinates=100,60,56,33
+[atDM.noteDS]
+Coordinates=304,487,78,123
+
+[atDM.usersClientDataSet]
+Coordinates=792,393,136,105
+
+[atDM.blocksCDS]
+Coordinates=603,425,96,159
+
+[atDM.blockNotesQ]
+Coordinates=604,603,105,159
+
+[atDM.usersDS]
+Coordinates=482,425,84,105
+
+[atDM.blockNotesDSet]
+Coordinates=475,648,121,159
+
+[atDM.updateNoteQ]
+Coordinates=603,53,107,51
+
+[atDM.ribbonsQ]
+Coordinates=703,444,88,177
+
+[atDM.blocksDS]
+Coordinates=237,648,89,159
+
+[atDM.notesCDS]
+Coordinates=383,487,91,123
+
+[atDM.mRibbonCDSet]
+Coordinates=792,1,117,195
+
+[DBNavigator2]
+Coordinates=0,0,82,51
 
 [DBNavigator1]
-Coordinates=320,10,82,51
+Coordinates=113,1,82,51
 
-[BindSourceDB1]
-Coordinates=717,1,92,195
+[DBGrid1]
+Coordinates=35,70,56,33
+
+[GroupBox4]
+Coordinates=241,105,70,51
+
+[mBlocksCB]
+Coordinates=379,105,72,33
+
+[mCBSlot1]
+Coordinates=110,122,84,87
+
+[mCBSlot2]
+Coordinates=21,122,84,87
+
+[mCBSlot3]
+Coordinates=241,1,84,87
+
+[mCBSlot4]
+Coordinates=170,247,84,87
+
+[Button1]
+Coordinates=94,70,53,51
+
+[Button2]
+Coordinates=222,159,53,51
+
+[Button3]
+Coordinates=363,1,53,51
+
+[Button4]
+Coordinates=363,157,53,51
+
+[Button7]
+Coordinates=489,71,53,51
+
+[Button8]
+Coordinates=489,1,53,51
+
+[Button5]
+Coordinates=111,248,53,51
+
+[Button6]
+Coordinates=489,141,53,51
+
+[TabSheet4]
+Coordinates=363,71,66,33
+
+[GroupBox5]
+Coordinates=489,211,70,51
+
+[ComboBox1]
+Coordinates=489,425,84,87
+
+[Button9]
+Coordinates=603,1,53,51
+
+[Button10]
+Coordinates=603,71,58,51
+
+[TabSheet5]
+Coordinates=603,141,66,33
+
+[GroupBox7]
+Coordinates=603,425,70,51
+
+[ComboBox2]
+Coordinates=398,487,84,87
+
+[Label1]
+Coordinates=603,193,46,51
+
+[Stains]
+Coordinates=578,487,45,51
+
+[ComboBox3]
+Coordinates=309,487,84,87
+
+[ComboBox4]
+Coordinates=220,487,84,87
+
+[ComboBox5]
+Coordinates=131,487,84,87
+
+[Label2]
+Coordinates=82,487,46,51
+
+[Label3]
+Coordinates=33,487,46,51
+
+[Label4]
+Coordinates=736,1,46,51
 

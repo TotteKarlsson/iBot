@@ -47,6 +47,7 @@ void __fastcall TMainForm::FormShow(TObject *Sender)
 	BottomPanel->Height     = mBottomPanelHeight + 1;
 	SB->Top = MainForm->Top + MainForm->Height + 10;
 	SB->SizeGrip = true;
+    gAppIsStartingUp = false;
 }
 
 void TMainForm::setupIniFile()

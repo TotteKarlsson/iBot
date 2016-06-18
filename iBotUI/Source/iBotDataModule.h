@@ -1,8 +1,5 @@
-//---------------------------------------------------------------------------
-
 #ifndef iBotDataModuleH
 #define iBotDataModuleH
-//---------------------------------------------------------------------------
 #include <System.Classes.hpp>
 #include "DbxDevartSQLite.hpp"
 #include <Data.DB.hpp>
@@ -10,24 +7,19 @@
 #include <Data.SqlExpr.hpp>
 #include <Datasnap.DBClient.hpp>
 #include <Datasnap.Provider.hpp>
+#include <SimpleDS.hpp>
 //---------------------------------------------------------------------------
 class TDataModule1 : public TDataModule
 {
 __published:	// IDE-managed Components
 	TSQLConnection *SQLConnection1;
-	TSQLDataSet *ribbonsDS;
-	TDataSetProvider *ribbonsProvider;
-	TClientDataSet *ribbonsCDS;
-	TDataSource *ribbonsDSource;
-	TIntegerField *ribbonsCDSid;
-	TIntegerField *ribbonsCDSstatus;
-	TSQLTimeStampField *ribbonsCDScreated;
-	TSQLTimeStampField *ribbonsCDSmodified;
-	TIntegerField *ribbonsCDSblock_id;
-	TIntegerField *ribbonsCDSorder;
-	TWideMemoField *ribbonsCDSnotes;
-	void __fastcall ribbonsCDSnotesGetText(TField *Sender, UnicodeString &Text,
-          bool DisplayText);
+	TDataSource *blocksDataSource;
+	TClientDataSet *blocksCDS;
+	TDataSetProvider *blocksProvider;
+	TSQLDataSet *blocksDS;
+	TSimpleDataSet *SimpleDataSet1;
+	TDataSource *DataSource1;
+
 private:	// User declarations
 public:		// User declarations
 	__fastcall TDataModule1(TComponent* Owner);

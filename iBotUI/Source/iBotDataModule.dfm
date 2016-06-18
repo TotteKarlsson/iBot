@@ -35,55 +35,50 @@ object DataModule1: TDataModule1
     Left = 48
     Top = 40
   end
-  object ribbonsDS: TSQLDataSet
-    CommandText = 'select * from ribbon'
-    DataSource = ribbonsDSource
-    MaxBlobSize = -1
-    Params = <>
-    SQLConnection = SQLConnection1
-    Left = 48
-    Top = 112
+  object blocksDataSource: TDataSource
+    DataSet = blocksCDS
+    Left = 336
+    Top = 128
   end
-  object ribbonsProvider: TDataSetProvider
-    DataSet = ribbonsDS
-    Options = [poFetchBlobsOnDemand, poUseQuoteChar]
-    Left = 144
-    Top = 112
-  end
-  object ribbonsCDS: TClientDataSet
+  object blocksCDS: TClientDataSet
     Active = True
     Aggregates = <>
     Params = <>
-    ProviderName = 'ribbonsProvider'
-    Left = 248
-    Top = 112
-    object ribbonsCDSid: TIntegerField
-      FieldName = 'id'
-    end
-    object ribbonsCDSstatus: TIntegerField
-      FieldName = 'status'
-    end
-    object ribbonsCDScreated: TSQLTimeStampField
-      FieldName = 'created'
-    end
-    object ribbonsCDSmodified: TSQLTimeStampField
-      FieldName = 'modified'
-    end
-    object ribbonsCDSblock_id: TIntegerField
-      FieldName = 'block_id'
-    end
-    object ribbonsCDSorder: TIntegerField
-      FieldName = 'order'
-    end
-    object ribbonsCDSnotes: TWideMemoField
-      FieldName = 'notes'
-      OnGetText = ribbonsCDSnotesGetText
-      BlobType = ftWideMemo
-    end
+    ProviderName = 'blocksProvider'
+    Left = 240
+    Top = 128
   end
-  object ribbonsDSource: TDataSource
-    DataSet = ribbonsCDS
-    Left = 344
-    Top = 112
+  object blocksProvider: TDataSetProvider
+    DataSet = blocksDS
+    Options = [poFetchBlobsOnDemand, poUseQuoteChar]
+    Left = 136
+    Top = 128
+  end
+  object blocksDS: TSQLDataSet
+    Active = True
+    CommandText = 'select * from block'
+    DataSource = blocksDataSource
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = SQLConnection1
+    Left = 40
+    Top = 128
+  end
+  object SimpleDataSet1: TSimpleDataSet
+    Active = True
+    Aggregates = <>
+    Connection = SQLConnection1
+    DataSet.CommandText = 'select * from ribbon'
+    DataSet.DataSource = DataSource1
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    Left = 48
+    Top = 224
+  end
+  object DataSource1: TDataSource
+    DataSet = SimpleDataSet1
+    Left = 168
+    Top = 224
   end
 end

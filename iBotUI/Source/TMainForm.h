@@ -44,6 +44,7 @@
 #include <Data.Bind.Grid.hpp>
 #include <Vcl.Bind.DBEngExt.hpp>
 #include <Vcl.Bind.Navigator.hpp>
+#include "TatDM.h"
 
 using mtk::Property;
 using mtk::SQLite;
@@ -85,22 +86,48 @@ class TMainForm : public TRegistryForm
     TImageList *ImageList1;
     TTimer *ShutDownTimer;
 	TGroupBox *GroupBox1;
-	TIntegerLabeledEdit *mSlot1E;
-	TIntegerLabeledEdit *mSlot2E;
-	TIntegerLabeledEdit *mSlot3E;
-	TIntegerLabeledEdit *mSlot4E;
-	TButton *Button1;
-	TButton *Button2;
-	TButton *Button3;
-	TButton *Button4;
 	TPageControl *PageControl1;
 	TTabSheet *TabSheet1;
 	TTabSheet *TabSheet2;
 	TPageControl *PageControl2;
 	TTabSheet *TabSheet3;
-	TDBGrid *DBGrid1;
+	TGroupBox *GroupBox2;
+	TGroupBox *GroupBox3;
+	TScrollBox *ScrollBox1;
+	TDBGrid *DBGrid2;
+	TDBNavigator *DBNavigator2;
 	TDBNavigator *DBNavigator1;
-	TBindSourceDB *BindSourceDB1;
+	TDBGrid *DBGrid1;
+	TDBLookupComboBox *mBlocksCB;
+	TGroupBox *GroupBox4;
+	TComboBox *mCBSlot1;
+	TComboBox *mCBSlot2;
+	TComboBox *mCBSlot3;
+	TComboBox *mCBSlot4;
+	TButton *Button1;
+	TButton *Button2;
+	TButton *Button3;
+	TButton *Button4;
+	TButton *Button5;
+	TButton *Button6;
+	TButton *Button7;
+	TButton *Button8;
+	TTabSheet *TabSheet4;
+	TGroupBox *GroupBox5;
+	TComboBox *ComboBox1;
+	TButton *Button9;
+	TButton *Button10;
+	TTabSheet *TabSheet5;
+	TGroupBox *GroupBox7;
+	TComboBox *ComboBox2;
+	TLabel *Label1;
+	TGroupBox *Stains;
+	TComboBox *ComboBox3;
+	TComboBox *ComboBox4;
+	TComboBox *ComboBox5;
+	TLabel *Label2;
+	TLabel *Label3;
+	TLabel *Label4;
     void __fastcall FormKeyDown(TObject *Sender, WORD &Key, TShiftState Shift);
     void __fastcall FormCreate(TObject *Sender);
 
@@ -118,6 +145,7 @@ class TMainForm : public TRegistryForm
     void __fastcall MainPCChange(TObject *Sender);
 	void __fastcall DBGrid1DrawColumnCell(TObject *Sender, const TRect &Rect, int DataCol,
           TColumn *Column, TGridDrawState State);
+	void __fastcall DBLookupComboBox5CloseUp(TObject *Sender);
 
     private:	// User declarations
         bool                                            gCanClose;
@@ -159,7 +187,8 @@ class TMainForm : public TRegistryForm
         bool                                            ConnectToDataBase(const string& ConnectionName);
 
 		void __fastcall                                 AppInBox(mlxStructMessage &Msg);
-
+        void											clearSlots();
+        void											addItemToSlots(const string& id, TObject* o);
 
     public:		// User declarations
                     __fastcall                          TMainForm(TComponent* Owner);

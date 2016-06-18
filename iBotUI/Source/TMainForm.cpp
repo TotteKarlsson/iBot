@@ -18,6 +18,7 @@
 #include "Poco/DateTimeFormat.h"
 #include "Poco/Timezone.h"
 #include "iBotDataModule.h"
+
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "mtkIniFileC"
@@ -38,7 +39,7 @@ extern TSplashForm*  gSplashForm;
 __fastcall TMainForm::TMainForm(TComponent* Owner)
     : TRegistryForm(gApplicationRegistryRoot, "MainForm", Owner),
 
-    mDBConnectionName("amalytico"),
+//    mDBConnectionName("amalytico"),
     mBottomPanelHeight(205),
     mMainTabIndex(0),
     mSplashProperties(gApplicationRegistryRoot, "Splash"),
@@ -119,13 +120,59 @@ void __fastcall TMainForm::MainPCChange(TObject *Sender)
 void __fastcall TMainForm::DBGrid1DrawColumnCell(TObject *Sender, const TRect &Rect,
           int DataCol, TColumn *Column, TGridDrawState State)
 {
-	if(Column->FieldName == "notes")
-    {
-    Column->Field->AsWideString;
+//	if(Column->FieldName == "notes")
+//    {
+////	    //Column->Field->AsString;
 //	 	DBGrid1->Canvas->FillRect(Rect);
 //     	DBGrid1->Canvas->TextOut(Rect.Left + 3, Rect.Top + 3,
 //              Column->Field->AsString);
+//    }
+}
+
+//---------------------------------------------------------------------------
+void __fastcall TMainForm::DBLookupComboBox5CloseUp(TObject *Sender)
+{
+	//Fill out the slots drop downs
+	String blockId = mBlocksCB->Text;
+    if(blockId.Length())
+    {
+    	//Query db for ribbons
+        TSQLQuery* q = new TSQLQuery(NULL);
+        q->SQLConnection = atDM->SQLConnection1;
+    	stringstream qs;
+    	qs << "SELECT * from ribbon where block_id = "<<stdstr(atDM->blocksCDS->FieldByName("id")->AsString);
+        string qstr = qs.str();
+        q->SQL->Add(qstr.c_str());
+        q->Open();
+
+        clearSlots();
+        //Get records and populate slots
+        for(int i = 0; i < q->RecordCount; i++)
+        {
+			string ribbonID = stdstr(q->FieldByName("id")->AsString);
+        	Log(lInfo) << ribbonID;
+			addItemToSlots(ribbonID, NULL);
+            q->Next();
+        }
+        q->Close();
     }
 }
+
 //---------------------------------------------------------------------------
+void TMainForm::clearSlots()
+{
+	mCBSlot1->Clear();
+	mCBSlot2->Clear();
+	mCBSlot3->Clear();
+	mCBSlot4->Clear();
+}
+
+void TMainForm::addItemToSlots(const string& id, TObject* o)
+{
+	mCBSlot1->Items->AddObject(vclstr(id), o);
+	mCBSlot2->Items->AddObject(vclstr(id), o);
+	mCBSlot3->Items->AddObject(vclstr(id), o);
+	mCBSlot4->Items->AddObject(vclstr(id), o);
+
+}
 

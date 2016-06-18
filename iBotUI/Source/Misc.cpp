@@ -27,7 +27,7 @@ BOOL CALLBACK FindOtherWindow(HWND hwnd, LPARAM lParam)
 	static TCHAR buffer[50];
 	GetWindowText(hwnd, buffer, 50);
 
-	if(_tcsstr(buffer, L"iBot"))
+	if(_tcsstr(buffer, "iBot"))
 	{
 		// do something with hwnd here
 		gOtherAppWindow = hwnd;

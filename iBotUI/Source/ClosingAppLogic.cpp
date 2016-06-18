@@ -14,7 +14,7 @@ __fastcall TMainForm::~TMainForm()
 
 	//Save project history
 	mBottomPanelHeight          = BottomPanel->Height;
-	mGeneralProperties.write();
+//	mGeneralProperties.write();
 
 	//Write to file
 	mIniFileC->save();
