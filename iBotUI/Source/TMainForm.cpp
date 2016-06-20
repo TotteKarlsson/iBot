@@ -23,6 +23,7 @@
 #pragma package(smart_init)
 #pragma link "mtkIniFileC"
 #pragma link "TIntegerLabeledEdit"
+#pragma link "TSlotFrame"
 #pragma resource "*.dfm"
 
 TMainForm *MainForm;
@@ -37,9 +38,8 @@ extern TSplashForm*  gSplashForm;
 
 //---------------------------------------------------------------------------
 __fastcall TMainForm::TMainForm(TComponent* Owner)
-    : TRegistryForm(gApplicationRegistryRoot, "MainForm", Owner),
-
-//    mDBConnectionName("amalytico"),
+    :
+    TRegistryForm(gApplicationRegistryRoot, "MainForm", Owner),
     mBottomPanelHeight(205),
     mMainTabIndex(0),
     mSplashProperties(gApplicationRegistryRoot, "Splash"),
@@ -50,7 +50,6 @@ __fastcall TMainForm::TMainForm(TComponent* Owner)
     logMsgMethod(&logMsg),
     mLogFileReader(joinPath(getSpecialFolder(CSIDL_LOCAL_APPDATA), "iBot", gLogFileName), logMsgMethod)
 {
-    //Close any dataconnection created by stupid TSQLConnection
     mTempFileFolder = joinPath(getSpecialFolder(CSIDL_LOCAL_APPDATA), "iBot");
     TMemoLogger::mMemoIsEnabled = false;
 
@@ -99,8 +98,6 @@ void __fastcall TMainForm::AppInBox(mlxStructMessage &msg)
                 gSplashForm = NULL;
             break;
 
-
-
             default:
             break ;
         }
@@ -114,19 +111,6 @@ void __fastcall TMainForm::AppInBox(mlxStructMessage &msg)
 void __fastcall TMainForm::MainPCChange(TObject *Sender)
 {
     //Check what tb is open
-}
-
-
-void __fastcall TMainForm::DBGrid1DrawColumnCell(TObject *Sender, const TRect &Rect,
-          int DataCol, TColumn *Column, TGridDrawState State)
-{
-//	if(Column->FieldName == "notes")
-//    {
-////	    //Column->Field->AsString;
-//	 	DBGrid1->Canvas->FillRect(Rect);
-//     	DBGrid1->Canvas->TextOut(Rect.Left + 3, Rect.Top + 3,
-//              Column->Field->AsString);
-//    }
 }
 
 //---------------------------------------------------------------------------
@@ -161,18 +145,30 @@ void __fastcall TMainForm::DBLookupComboBox5CloseUp(TObject *Sender)
 //---------------------------------------------------------------------------
 void TMainForm::clearSlots()
 {
-	mCBSlot1->Clear();
-	mCBSlot2->Clear();
-	mCBSlot3->Clear();
-	mCBSlot4->Clear();
+	SlotFrame1->mRibbonCB->Clear();
+	SlotFrame2->mRibbonCB->Clear();
+	SlotFrame3->mRibbonCB->Clear();
+	SlotFrame4->mRibbonCB->Clear();
 }
 
 void TMainForm::addItemToSlots(const string& id, TObject* o)
 {
-	mCBSlot1->Items->AddObject(vclstr(id), o);
-	mCBSlot2->Items->AddObject(vclstr(id), o);
-	mCBSlot3->Items->AddObject(vclstr(id), o);
-	mCBSlot4->Items->AddObject(vclstr(id), o);
-
+	SlotFrame1->mRibbonCB->Items->AddObject(vclstr(id), o);
+	SlotFrame2->mRibbonCB->Items->AddObject(vclstr(id), o);
+	SlotFrame3->mRibbonCB->Items->AddObject(vclstr(id), o);
+	SlotFrame4->mRibbonCB->Items->AddObject(vclstr(id), o);
 }
+
+//---------------------------------------------------------------------------
+void __fastcall TMainForm::Button1Click(TObject *Sender)
+{
+	BottomPanel->Visible = false;
+}
+
+
+void __fastcall TMainForm::NotImplementedYetAExecute(TObject *Sender)
+{
+	MessageDlg("This functionlaity is not yet implemented", mtInformation, TMsgDlgButtons() << mbOK, 0);
+}
+//---------------------------------------------------------------------------
 

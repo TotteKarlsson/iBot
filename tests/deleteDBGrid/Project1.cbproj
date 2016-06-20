@@ -1,10 +1,10 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{EB8E9989-74F0-4743-BCCE-A05B331B72C4}</ProjectGuid>
+        <ProjectGuid>{0F23237A-64F9-42AF-A3DA-14FAD4DB1B58}</ProjectGuid>
         <ProjectVersion>14.4</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <AppType>Application</AppType>
-        <MainSource>iBot.cpp</MainSource>
+        <MainSource>Project1.cpp</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
@@ -15,11 +15,6 @@
     </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
         <Base_Win32>true</Base_Win32>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
-        <Base_Win64>true</Base_Win64>
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
@@ -40,17 +35,14 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <VerInfo_Keys>CompanyName=Dune Scientific, LLC;FileDescription=;FileVersion=0.5.0.0;InternalName=;LegalCopyright=;LegalTrademarks=Dune Scientific, LLC;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <Manifest_File>None</Manifest_File>
-        <VerInfo_Locale>1033</VerInfo_Locale>
-        <ProjectType>CppVCLApplication</ProjectType>
-        <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
-        <ILINK_LibraryPath>P:\atDB\UI\;DataModules\;Core\;Forms\;Frames\;P:\iBot\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <IncludePath>P:\iBot\tests\deleteDBGrid\;$(IncludePath)</IncludePath>
         <_TCHARMapping>wchar_t</_TCHARMapping>
-        <IncludePath>P:\atDB\UI\;DataModules\;Core\;Forms\;Frames\;P:\iBot\;$(IncludePath)</IncludePath>
+        <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
+        <AllPackageLibs>rtl.lib;vcl.lib;dsnap.lib;dbrtl.lib;dbexpress.lib;DbxCommonDriver.lib;vcldb.lib;DbxDevartSQLiteDriver170.lib</AllPackageLibs>
+        <ProjectType>CppVCLApplication</ProjectType>
+        <ILINK_LibraryPath>P:\iBot\tests\deleteDBGrid\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <Multithreaded>true</Multithreaded>
-        <AllPackageLibs>rtl.lib;vcl.lib;dbrtl.lib;dbexpress.lib;DbxCommonDriver.lib;dsnap.lib;DbxDevartSQLiteDriver170.lib;vcldb.lib;dbxcds.lib;VCLCommon.lib;vclactnband.lib;vclx.lib;vclimg.lib;CSKGenerator.lib;adortl.lib;DuneComponents.lib;bindengine.lib;bindcomp.lib;bindcompvcl.lib;TeeDB.lib;TeeUI.lib;Tee.lib</AllPackageLibs>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
         <DynamicRTL>true</DynamicRTL>
         <UsePackages>true</UsePackages>
@@ -62,18 +54,13 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <Defines>POCO_STATIC;$(Defines)</Defines>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
-        <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <PackageImports>bindcompvcl;TeeUI;CSKGenerator;adortl;DbxDevartSQLiteDriver170;DuneComponents;VCLCommon;RaizeComponentsTrialVclDb;vcltouch;bcbsmp;bindcompfmx;DBXSqliteDriver;CustomIPTransport;RaizeComponentsTrialVcl;fmx;dsnap;rtl;dbrtl;DbxClientDriver;vcl;fmxase;bindcomp;TeeDB;IndyCore;IndySystem;dsnapcon;DBXInterBaseDriver;Tee;DataSnapCommon;fmxobj;vclx;xmlrtl;DbxCommonDriver;vclimg;fmxdae;DBXMySQLDriver;dbxcds;IndyProtocols;bdertl;bindengine;vclactnband;dbexpress;vcldb;bindcompdbx;vcldsnap;$(PackageImports)</PackageImports>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
-        <PackageImports>bindcompvcl;TeeUI;adortl;VCLCommon;RaizeComponentsTrialVclDb;vcltouch;bindcompfmx;DBXSqliteDriver;CustomIPTransport;RaizeComponentsTrialVcl;fmx;dsnap;rtl;dbrtl;DbxClientDriver;vcl;fmxase;bindcomp;TeeDB;dsnapcon;DBXInterBaseDriver;Tee;DataSnapCommon;fmxobj;vclx;xmlrtl;DbxCommonDriver;vclimg;fmxdae;DBXMySQLDriver;dbxcds;bindengine;vclactnband;dbexpress;vcldb;bindcompdbx;vcldsnap;$(PackageImports)</PackageImports>
+        <PackageImports>CSKGenerator;VCLCommon;bindcompfmx;DBXSqliteDriver;vcldbx;RaizeComponentsTrialVcl;fmx;rtl;dbrtl;DbxClientDriver;IndySystem;TeeDB;bindcomp;inetdb;vclib;inetdbbde;DBXInterBaseDriver;Tee;DataSnapCommon;xmlrtl;ibxpress;DbxCommonDriver;vclimg;IndyProtocols;dbxcds;DBXMySQLDriver;MetropolisUILiveTile;soaprtl;vclactnband;bindengine;vcldb;bindcompdbx;vcldsnap;bindcompvcl;FMXTee;TeeUI;DbxDevartSQLiteDriver170;vclie;RaizeComponentsTrialVclDb;vcltouch;bcbsmp;websnap;CustomIPTransport;vclribbon;dsnap;IndyIPServer;Intraweb;IndyCore;vcl;IndyIPCommon;CloudService;dsnapcon;FmxTeeUI;inet;vclx;inetdbxpress;webdsnap;bdertl;DuneComponents;dbexpress;adortl;bcbie;IndyIPClient;$(PackageImports)</PackageImports>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
@@ -98,91 +85,26 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\debug\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-        <_TCHARMapping>char</_TCHARMapping>
-        <BCC_PCHInject>pch.h</BCC_PCHInject>
-        <BCC_PCHCache>true</BCC_PCHCache>
-        <VerInfo_MinorVer>5</VerInfo_MinorVer>
-        <Icon_MainIcon>..\Resources\iBot.ico</Icon_MainIcon>
-        <VerInfo_PreRelease>true</VerInfo_PreRelease>
-        <VerInfo_MajorVer>0</VerInfo_MajorVer>
-        <VerInfo_Debug>true</VerInfo_Debug>
-        <VerInfo_Keys>CompanyName=Dune Scientific, LLC;FileDescription=;FileVersion=0.5.0.0;InternalName=;LegalCopyright=;LegalTrademarks=Dune Scientific, LLC;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <PostBuildEvent><![CDATA[copy ..\DataBases\iBot.db $(OUTPUTDIR)
-REM mkdir $(OUTPUTDIR)\styles
-REM xcopy ..\Redist\styles $(OUTPUTDIR)\styles /e /y
-$(PostBuildEvent)]]></PostBuildEvent>
-        <FinalOutputDir>$(DEBUG_BUILD)\bin</FinalOutputDir>
-        <ILINK_LibraryPath>$(DEBUG_BUILD)\lib;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <IncludePath>$(DEBUG_BUILD)\include;$(IncludePath)</IncludePath>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Locale>1033</VerInfo_Locale>
-        <LinkPackageImports>rtl.bpi;vcl.bpi;dbrtl.bpi;dbexpress.bpi;DbxCommonDriver.bpi;dsnap.bpi;DbxDevartSQLiteDriver170.bpi;vcldb.bpi;dbxcds.bpi;VCLCommon.bpi;vclactnband.bpi;vclx.bpi;vclimg.bpi;CSKGenerator.bpi;adortl.bpi;DuneComponents.bpi;bindengine.bpi;bindcomp.bpi;bindcompvcl.bpi;TeeDB.bpi;TeeUI.bpi;Tee.bpi</LinkPackageImports>
+        <LinkPackageImports>rtl.bpi;vcl.bpi;dsnap.bpi;dbrtl.bpi;dbexpress.bpi;DbxCommonDriver.bpi;vcldb.bpi;DbxDevartSQLiteDriver170.bpi</LinkPackageImports>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <Defines>NDEBUG;$(Defines)</Defines>
         <TASM_Debugging>None</TASM_Debugging>
     </PropertyGroup>
     <ItemGroup>
-        <CppCompile Include="P:\atDB\UI\TatDM.cpp">
-            <Form>atDM</Form>
-            <DesignClass>TDataModule</DesignClass>
-            <DependentOn>P:\atDB\UI\TatDM.h</DependentOn>
-            <BuildOrder>12</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="auto_link.cpp">
-            <BuildOrder>3</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="ClosingAppLogic.cpp">
-            <BuildOrder>19</BuildOrder>
-        </CppCompile>
-        <None Include="Core\amlDataStructures.h">
-            <BuildOrder>29</BuildOrder>
-        </None>
-        <CppCompile Include="Core\amlUtilities.cpp">
-            <BuildOrder>7</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="Forms\TSplashForm.cpp">
-            <BuildOrder>29</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="Frames\TSlotFrame.cpp">
-            <Form>SlotFrame</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TFrame</DesignClass>
-            <DependentOn>Frames\TSlotFrame.h</DependentOn>
-            <BuildOrder>13</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="Frames\TSQLiteDBFrame.cpp">
-            <Form>SQLiteDBFrame</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TFrame</DesignClass>
-            <DependentOn>Frames\TSQLiteDBFrame.h</DependentOn>
-            <BuildOrder>25</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="iBot.cpp">
+        <CppCompile Include="Project1.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
-        <CppCompile Include="InitializingAppLogic.cpp">
-            <BuildOrder>20</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="Misc.cpp">
-            <BuildOrder>22</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="MiscDataBase.cpp">
-            <BuildOrder>17</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="ThemesLogic.cpp">
-            <BuildOrder>27</BuildOrder>
-        </CppCompile>
-        <CppCompile Include="TMainForm.cpp">
-            <Form>MainForm</Form>
+        <PCHCompile Include="Project1PCH1.h">
+            <BuildOrder>1</BuildOrder>
+        </PCHCompile>
+        <CppCompile Include="Unit1.cpp">
+            <Form>Form1</Form>
             <FormType>dfm</FormType>
-            <DependentOn>TMainForm.h</DependentOn>
+            <DependentOn>Unit1.h</DependentOn>
             <BuildOrder>2</BuildOrder>
         </CppCompile>
-        <FormResources Include="TMainForm.dfm"/>
-        <FormResources Include="Frames\TSQLiteDBFrame.dfm"/>
-        <FormResources Include="P:\atDB\UI\TatDM.dfm"/>
-        <FormResources Include="Frames\TSlotFrame.dfm"/>
+        <FormResources Include="Unit1.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -201,7 +123,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <BorlandProject>
             <CPlusPlusBuilder.Personality>
                 <Source>
-                    <Source Name="MainSource">iBot.cpp</Source>
+                    <Source Name="MainSource">Project1.cpp</Source>
                 </Source>
                 <VersionInfo>
                     <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
@@ -241,29 +163,16 @@ $(PostBuildEvent)]]></PostBuildEvent>
                 <ProjectProperties>
                     <ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
                     <ProjectProperties Name="ManagePaths">True</ProjectProperties>
-                    <ProjectProperties Name="VerifyPackages">False</ProjectProperties>
+                    <ProjectProperties Name="VerifyPackages">True</ProjectProperties>
                 </ProjectProperties>
-                <Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k170.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp170.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
-                </Excluded_Packages>
             </CPlusPlusBuilder.Personality>
             <Deployment/>
             <Platforms>
                 <Platform value="Win32">True</Platform>
-                <Platform value="Win64">False</Platform>
             </Platforms>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>
     <Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')"/>
     <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
-    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win32'">
-        <PreBuildEvent/>
-        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
-        <PreLinkEvent/>
-        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
-        <PostBuildEvent>copy ..\DataBases\iBot.db $(OUTPUTDIR)&amp;&amp;REM mkdir $(OUTPUTDIR)\styles&amp;&amp;REM xcopy ..\Redist\styles $(OUTPUTDIR)\styles /e /y</PostBuildEvent>
-        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
-    </PropertyGroup>
 </Project>

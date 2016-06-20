@@ -13,12 +13,7 @@ class TDataModule1 : public TDataModule
 {
 __published:	// IDE-managed Components
 	TSQLConnection *SQLConnection1;
-	TDataSource *blocksDataSource;
-	TClientDataSet *blocksCDS;
-	TDataSetProvider *blocksProvider;
-	TSQLDataSet *blocksDS;
-	TSimpleDataSet *SimpleDataSet1;
-	TDataSource *DataSource1;
+	TSQLDataSet *SQLDataSet1;
 
 private:	// User declarations
 public:		// User declarations

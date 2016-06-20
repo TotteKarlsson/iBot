@@ -7,6 +7,7 @@
 USEFORM("TMainForm.cpp", MainForm);
 USEFORM("Frames\TSQLiteDBFrame.cpp", SQLiteDBFrame); /* TFrame: File Type */
 USEFORM("P:\atDB\UI\TatDM.cpp", atDM); /* TDataModule: File Type */
+USEFORM("Frames\TSlotFrame.cpp", SlotFrame); /* TFrame: File Type */
 //---------------------------------------------------------------------------
 #include "mtkUtils.h"
 #include "mtkVCLUtils.h"

@@ -45,6 +45,7 @@
 #include <Vcl.Bind.DBEngExt.hpp>
 #include <Vcl.Bind.Navigator.hpp>
 #include "TatDM.h"
+#include "TSlotFrame.h"
 
 using mtk::Property;
 using mtk::SQLite;
@@ -83,7 +84,6 @@ class TMainForm : public TRegistryForm
     TAction *OpenAboutFormA;
     TMenuItem *About1;
     TToolButton *ToolButton1;
-    TImageList *ImageList1;
     TTimer *ShutDownTimer;
 	TGroupBox *GroupBox1;
 	TPageControl *PageControl1;
@@ -100,23 +100,7 @@ class TMainForm : public TRegistryForm
 	TDBGrid *DBGrid1;
 	TDBLookupComboBox *mBlocksCB;
 	TGroupBox *GroupBox4;
-	TComboBox *mCBSlot1;
-	TComboBox *mCBSlot2;
-	TComboBox *mCBSlot3;
-	TComboBox *mCBSlot4;
-	TButton *Button1;
-	TButton *Button2;
-	TButton *Button3;
-	TButton *Button4;
-	TButton *Button5;
-	TButton *Button6;
-	TButton *Button7;
-	TButton *Button8;
 	TTabSheet *TabSheet4;
-	TGroupBox *GroupBox5;
-	TComboBox *ComboBox1;
-	TButton *Button9;
-	TButton *Button10;
 	TTabSheet *TabSheet5;
 	TGroupBox *GroupBox7;
 	TComboBox *ComboBox2;
@@ -128,26 +112,31 @@ class TMainForm : public TRegistryForm
 	TLabel *Label2;
 	TLabel *Label3;
 	TLabel *Label4;
+	TSlotFrame *SlotFrame1;
+	TSlotFrame *SlotFrame2;
+	TSlotFrame *SlotFrame3;
+	TSlotFrame *SlotFrame4;
+	TButton *Button1;
+	TAction *NotImplementedYetA;
+	TButton *Button2;
+	TComboBox *ComboBox1;
+	TLabel *Label5;
     void __fastcall FormKeyDown(TObject *Sender, WORD &Key, TShiftState Shift);
     void __fastcall FormCreate(TObject *Sender);
-
     void __fastcall ClearMemoAExecute(TObject *Sender);
     void __fastcall StartupTimerTimer(TObject *Sender);
-
     void __fastcall FormCloseQuery(TObject *Sender, bool &CanClose);
     void __fastcall FormShow(TObject *Sender);
     void __fastcall ThemesMenuClick(TObject *Sender);
     void __fastcall ShutDownTimerTimer(TObject *Sender);
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
-
-
     void __fastcall LogLevelCBChange(TObject *Sender);
     void __fastcall MainPCChange(TObject *Sender);
-	void __fastcall DBGrid1DrawColumnCell(TObject *Sender, const TRect &Rect, int DataCol,
-          TColumn *Column, TGridDrawState State);
 	void __fastcall DBLookupComboBox5CloseUp(TObject *Sender);
+	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall NotImplementedYetAExecute(TObject *Sender);
 
-    private:	// User declarations
+    private:
         bool                                            gCanClose;
         TApplicationProperties                          mAppProperties;
 
@@ -167,15 +156,12 @@ class TMainForm : public TRegistryForm
 														//using the messageProcessor
 		MessageContainer                                mMessages;
 
-
                                                         //Parameters...
         IniFileProperties	      	                    mGeneralProperties;
         mtk::Property<int>	                            mBottomPanelHeight;
 		mtk::Property<int>	                            mMainTabIndex;
 
 		mtk::Property<mtk::LogLevel>	                mLogLevel;
-
-
         TRegistryProperties   	  	                    mSplashProperties;
         mtk::Property<bool>                             mShowSplashOnStartup;
         void        __fastcall                          PopulateStyleMenu();
@@ -190,7 +176,7 @@ class TMainForm : public TRegistryForm
         void											clearSlots();
         void											addItemToSlots(const string& id, TObject* o);
 
-    public:		// User declarations
+    public:
                     __fastcall                          TMainForm(TComponent* Owner);
                     __fastcall                          ~TMainForm();
 
@@ -199,7 +185,5 @@ class TMainForm : public TRegistryForm
         END_MESSAGE_MAP(TForm)
 };
 
-//---------------------------------------------------------------------------
 extern PACKAGE TMainForm *MainForm;
-//---------------------------------------------------------------------------
 #endif
