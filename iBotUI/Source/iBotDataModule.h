@@ -8,18 +8,31 @@
 #include <Datasnap.DBClient.hpp>
 #include <Datasnap.Provider.hpp>
 #include <SimpleDS.hpp>
+
 //---------------------------------------------------------------------------
-class TDataModule1 : public TDataModule
+class TiBotDataModule : public TDataModule
 {
 __published:	// IDE-managed Components
 	TSQLConnection *SQLConnection1;
-	TSQLDataSet *SQLDataSet1;
+	TSQLDataSet *mImageStainSessionDS;
+	TDataSetProvider *mImageStainProvider;
+	TClientDataSet *mImageStainSessionCDSet;
+	TDataSource *mImageStainSessionsDataSource;
+	TIntegerField *mImageStainSessionCDSetid;
+	TWideMemoField *mImageStainSessionCDSetname;
+	TIntegerField *mImageStainSessionCDSetimmunoProtocol;
+	TIntegerField *mImageStainSessionDSid;
+	TWideMemoField *mImageStainSessionDSname;
+	TIntegerField *mImageStainSessionDSimmunoProtocol;
+	void __fastcall mImageStainSessionCDSetAfterPost(TDataSet *DataSet);
+	void __fastcall SQLConnection1AfterConnect(TObject *Sender);
+
 
 private:	// User declarations
 public:		// User declarations
-	__fastcall TDataModule1(TComponent* Owner);
+	__fastcall TiBotDataModule(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TDataModule1 *DataModule1;
+extern PACKAGE TiBotDataModule *iBotDataModule;
 //---------------------------------------------------------------------------
 #endif

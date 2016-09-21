@@ -2,10 +2,10 @@
 #include "TMainForm.h"
 #include "mtkLogger.h"
 #include "TMemoLogger.h"
-#include "TSplashForm.h"
+//#include "TSplashForm.h"
 
 using namespace mtk;
-extern TSplashForm*  gSplashForm;
+//extern TSplashForm*  gSplashForm;
 //---------------------------------------------------------------------------
 __fastcall TMainForm::~TMainForm()
 {

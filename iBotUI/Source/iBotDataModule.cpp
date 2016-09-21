@@ -8,12 +8,23 @@ using namespace mtk;
 #pragma classgroup "System.Classes.TPersistent"
 #pragma link "DbxDevartSQLite"
 #pragma resource "*.dfm"
-TDataModule1 *DataModule1;
+TiBotDataModule *iBotDataModule;
 //---------------------------------------------------------------------------
-__fastcall TDataModule1::TDataModule1(TComponent* Owner)
+__fastcall TiBotDataModule::TiBotDataModule(TComponent* Owner)
 	: TDataModule(Owner)
 {
 }
 
+void __fastcall TiBotDataModule::mImageStainSessionCDSetAfterPost(TDataSet *DataSet)
+{
+	Log(lInfo) <<"Hello";
+}
+//---------------------------------------------------------------------------
 
+void __fastcall TiBotDataModule::SQLConnection1AfterConnect(TObject *Sender)
+
+{
+	Log(lInfo) << "After Connect";
+}
+//---------------------------------------------------------------------------
 

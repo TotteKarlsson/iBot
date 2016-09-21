@@ -3,13 +3,7 @@
         <ProjectGuid>{5BE59B66-24A8-4FD3-8D82-D8B543410AC6}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="P:\libs\dslib\VCL\Common\VCLCommon.cbproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="Source\Core\iBotCore-static.cbproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="iBotPackage.cbproj">
             <Dependencies/>
         </Projects>
         <Projects Include="Source\iBot.cbproj">
@@ -23,15 +17,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="VCLCommon">
-        <MSBuild Projects="P:\libs\dslib\VCL\Common\VCLCommon.cbproj"/>
-    </Target>
-    <Target Name="VCLCommon:Clean">
-        <MSBuild Projects="P:\libs\dslib\VCL\Common\VCLCommon.cbproj" Targets="Clean"/>
-    </Target>
-    <Target Name="VCLCommon:Make">
-        <MSBuild Projects="P:\libs\dslib\VCL\Common\VCLCommon.cbproj" Targets="Make"/>
-    </Target>
     <Target Name="iBotCore-static">
         <MSBuild Projects="Source\Core\iBotCore-static.cbproj"/>
     </Target>
@@ -40,15 +25,6 @@
     </Target>
     <Target Name="iBotCore-static:Make">
         <MSBuild Projects="Source\Core\iBotCore-static.cbproj" Targets="Make"/>
-    </Target>
-    <Target Name="iBotPackage">
-        <MSBuild Projects="iBotPackage.cbproj"/>
-    </Target>
-    <Target Name="iBotPackage:Clean">
-        <MSBuild Projects="iBotPackage.cbproj" Targets="Clean"/>
-    </Target>
-    <Target Name="iBotPackage:Make">
-        <MSBuild Projects="iBotPackage.cbproj" Targets="Make"/>
     </Target>
     <Target Name="iBot" DependsOnTargets="iBotCore-static">
         <MSBuild Projects="Source\iBot.cbproj"/>
@@ -60,13 +36,13 @@
         <MSBuild Projects="Source\iBot.cbproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="VCLCommon;iBotCore-static;iBotPackage;iBot"/>
+        <CallTarget Targets="iBotCore-static;iBot"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="VCLCommon:Clean;iBotCore-static:Clean;iBotPackage:Clean;iBot:Clean"/>
+        <CallTarget Targets="iBotCore-static:Clean;iBot:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="VCLCommon:Make;iBotCore-static:Make;iBotPackage:Make;iBot:Make"/>
+        <CallTarget Targets="iBotCore-static:Make;iBot:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

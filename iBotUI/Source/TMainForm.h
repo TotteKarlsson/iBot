@@ -9,8 +9,8 @@
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.Grids.hpp>
 //---------------------------------------------------------------------------
-#include "amlApplicationMessages.h"
-#include "amlDataStructures.h"
+#include "ibApplicationMessages.h"
+#include "ibDataStructures.h"
 #include "mtkIniFileC.h"
 #include "mtkIniFileProperties.h"
 #include "mtkLogFileReader.h"
@@ -45,6 +45,7 @@
 #include <Vcl.Bind.DBEngExt.hpp>
 #include <Vcl.Bind.Navigator.hpp>
 #include "TatDM.h"
+#include "iBotDataModule.h"
 #include "TSlotFrame.h"
 
 using mtk::Property;
@@ -103,7 +104,6 @@ class TMainForm : public TRegistryForm
 	TTabSheet *TabSheet4;
 	TTabSheet *TabSheet5;
 	TGroupBox *GroupBox7;
-	TComboBox *ComboBox2;
 	TLabel *Label1;
 	TGroupBox *Stains;
 	TComboBox *ComboBox3;
@@ -121,6 +121,8 @@ class TMainForm : public TRegistryForm
 	TButton *Button2;
 	TComboBox *ComboBox1;
 	TLabel *Label5;
+	TDBGrid *DBGrid3;
+	TDBLookupComboBox *mImageStainSessionCB;
     void __fastcall FormKeyDown(TObject *Sender, WORD &Key, TShiftState Shift);
     void __fastcall FormCreate(TObject *Sender);
     void __fastcall ClearMemoAExecute(TObject *Sender);

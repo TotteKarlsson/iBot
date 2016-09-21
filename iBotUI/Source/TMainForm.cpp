@@ -12,9 +12,9 @@
 #include "mtkLogger.h"
 #include "mtkSQLiteTable.h"
 #include "mtkSQLiteException.h"
-#include "TShowFileContentForm.h"
-#include "TSplashForm.h"
-#include "TamFileEditor.h"
+//#include "TShowFileContentForm.h"
+//#include "TSplashForm.h"
+//#include "TamFileEditor.h"
 #include "Poco/DateTimeFormat.h"
 #include "Poco/Timezone.h"
 #include "iBotDataModule.h"
@@ -34,7 +34,7 @@ extern string gLogFileName;
 extern string gApplicationRegistryRoot;
 extern string gDefaultAppTheme;
 extern bool gIsDevelopmentRelease;
-extern TSplashForm*  gSplashForm;
+//extern TSplashForm*  gSplashForm;
 
 //---------------------------------------------------------------------------
 __fastcall TMainForm::TMainForm(TComponent* Owner)
@@ -95,7 +95,7 @@ void __fastcall TMainForm::AppInBox(mlxStructMessage &msg)
         {
             case amSplashWasClosed:
                 Log(lDebug2) << "Splash form sent message that it was closed";
-                gSplashForm = NULL;
+//                gSplashForm = NULL;
             break;
 
             default:

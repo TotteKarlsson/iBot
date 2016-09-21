@@ -5,7 +5,7 @@
 #include "mtkSQLiteTable.h"
 #include "mtkSQLiteQuery.h"
 #include "mtkMoleculixException.h"
-#include "amlUtilities.h"
+#include "ibUtilities.h"
 #include "mtkUtils.h"
 #include "mtkWin32Utils.h"
 //---------------------------------------------------------------------------

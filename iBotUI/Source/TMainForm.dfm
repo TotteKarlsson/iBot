@@ -38,7 +38,6 @@ object MainForm: TMainForm
     Height = 212
     Align = alBottom
     TabOrder = 0
-    ExplicitTop = 519
     object Panel4: TPanel
       Left = 1
       Top = 1
@@ -120,23 +119,20 @@ object MainForm: TMainForm
     Height = 547
     Align = alClient
     TabOrder = 1
-    ExplicitTop = -1
     object PageControl1: TPageControl
       Left = 1
       Top = 1
       Width = 941
       Height = 545
-      ActivePage = TabSheet5
+      ActivePage = TabSheet4
       Align = alClient
       TabOrder = 0
       object TabSheet4: TTabSheet
         Caption = 'Status'
         ImageIndex = 2
-        ExplicitHeight = 486
       end
       object TabSheet1: TTabSheet
         Caption = 'Session'
-        ExplicitHeight = 486
         object GroupBox1: TGroupBox
           Left = 13
           Top = 95
@@ -154,6 +150,7 @@ object MainForm: TMainForm
             TabOrder = 0
             ExplicitLeft = 2
             ExplicitTop = 15
+            ExplicitWidth = 864
           end
           inline SlotFrame2: TSlotFrame
             Left = 2
@@ -165,6 +162,7 @@ object MainForm: TMainForm
             TabOrder = 1
             ExplicitLeft = 2
             ExplicitTop = 88
+            ExplicitWidth = 864
           end
           inline SlotFrame3: TSlotFrame
             Left = 2
@@ -176,6 +174,7 @@ object MainForm: TMainForm
             TabOrder = 2
             ExplicitLeft = 2
             ExplicitTop = 161
+            ExplicitWidth = 864
           end
           inline SlotFrame4: TSlotFrame
             Left = 2
@@ -187,6 +186,7 @@ object MainForm: TMainForm
             TabOrder = 3
             ExplicitLeft = 2
             ExplicitTop = 234
+            ExplicitWidth = 864
           end
         end
         object GroupBox4: TGroupBox
@@ -212,8 +212,6 @@ object MainForm: TMainForm
       object TabSheet5: TTabSheet
         Caption = 'Image/Stain Protocols'
         ImageIndex = 2
-        ExplicitLeft = 7
-        ExplicitTop = 23
         object GroupBox7: TGroupBox
           Left = 3
           Top = 32
@@ -228,21 +226,13 @@ object MainForm: TMainForm
             Height = 13
             Caption = 'Predefined Image/Stain sessions'
           end
-          object ComboBox2: TComboBox
-            Left = 13
-            Top = 43
-            Width = 145
-            Height = 21
-            TabOrder = 0
-            Text = 'ComboBox2'
-          end
           object Stains: TGroupBox
             Left = 13
             Top = 88
             Width = 468
             Height = 209
             Caption = 'Stain Protocols'
-            TabOrder = 1
+            TabOrder = 0
             object Label2: TLabel
               Left = 16
               Top = 61
@@ -305,19 +295,39 @@ object MainForm: TMainForm
             end
           end
           object Button2: TButton
-            Left = 164
-            Top = 41
+            Left = 244
+            Top = 39
             Width = 66
             Height = 25
             Caption = 'New'
+            TabOrder = 1
+          end
+          object mImageStainSessionCB: TDBLookupComboBox
+            Left = 15
+            Top = 43
+            Width = 145
+            Height = 21
+            KeyField = 'id'
+            ListField = 'id'
             TabOrder = 2
           end
+        end
+        object DBGrid3: TDBGrid
+          Left = 584
+          Top = 181
+          Width = 320
+          Height = 120
+          TabOrder = 1
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -11
+          TitleFont.Name = 'Tahoma'
+          TitleFont.Style = []
         end
       end
       object TabSheet2: TTabSheet
         Caption = 'Data Tables'
         ImageIndex = 1
-        ExplicitHeight = 486
         object PageControl2: TPageControl
           Left = 0
           Top = 0
@@ -326,10 +336,8 @@ object MainForm: TMainForm
           ActivePage = TabSheet3
           Align = alClient
           TabOrder = 0
-          ExplicitHeight = 486
           object TabSheet3: TTabSheet
             Caption = 'Blocks && Ribbons'
-            ExplicitHeight = 458
             object ScrollBox1: TScrollBox
               Left = 0
               Top = 0
@@ -337,7 +345,6 @@ object MainForm: TMainForm
               Height = 489
               Align = alClient
               TabOrder = 0
-              ExplicitHeight = 458
               object GroupBox2: TGroupBox
                 Left = 0
                 Top = 201
@@ -346,7 +353,6 @@ object MainForm: TMainForm
                 Align = alTop
                 Caption = 'Ribbons'
                 TabOrder = 0
-                ExplicitWidth = 904
                 object DBNavigator1: TDBNavigator
                   Left = 23
                   Top = 24
@@ -377,7 +383,6 @@ object MainForm: TMainForm
                 Align = alTop
                 Caption = 'Blocks'
                 TabOrder = 1
-                ExplicitWidth = 904
                 object DBGrid2: TDBGrid
                   Left = 23
                   Top = 57
@@ -441,7 +446,6 @@ object MainForm: TMainForm
     Width = 943
     Height = 19
     Panels = <>
-    ExplicitTop = 731
   end
   object ActionList1: TActionList
     Left = 712

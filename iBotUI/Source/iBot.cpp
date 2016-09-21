@@ -4,8 +4,8 @@
 //---------------------------------------------------------------------------
 #include <Vcl.Styles.hpp>
 #include <Vcl.Themes.hpp>
-USEFORM("TMainForm.cpp", MainForm);
 USEFORM("Frames\TSQLiteDBFrame.cpp", SQLiteDBFrame); /* TFrame: File Type */
+USEFORM("TMainForm.cpp", MainForm);
 USEFORM("P:\atDB\UI\TatDM.cpp", atDM); /* TDataModule: File Type */
 USEFORM("Frames\TSlotFrame.cpp", SlotFrame); /* TFrame: File Type */
 //---------------------------------------------------------------------------
@@ -14,8 +14,8 @@ USEFORM("Frames\TSlotFrame.cpp", SlotFrame); /* TFrame: File Type */
 #include "mtkIniKey.h"
 #include "mtkRestartApplicationUtils.h"
 #include "mtkLogger.h"
-#include "amlUtilities.h"
-#include "TSplashForm.h"
+#include "ibUtilities.h"
+//#include "TSplashForm.h"
 #include "mtkMoleculixException.h"
 #include "mtkSQLite.h"
 #pragma package(smart_init)
@@ -36,7 +36,7 @@ extern string       gLogFileName                = "iBot.log";
 extern bool         gIsDevelopmentRelease       = false;
 extern bool         gAppIsStartingUp            = true;
 extern bool         gHideSplash                 = true;
-extern TSplashForm* gSplashForm                 = NULL;
+//extern TSplashForm* gSplashForm                 = NULL;
 extern SQLite       gDB                         ;
 
 BOOL CALLBACK FindOtherWindow(HWND hwnd, LPARAM lParam) ;
@@ -93,17 +93,17 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
         loadStyles();
         setupApplicationTheme();
 
-        gSplashForm = new TSplashForm(Application);
-        if(!gHideSplash)
-        {
-            Application->ShowMainForm = false;
-            gSplashForm->Show();
-            gSplashForm->Update();
-        }
-        else
-        {
-            gSplashForm->Close();
-        }
+//        gSplashForm = new TSplashForm(Application);
+//        if(!gHideSplash)
+//        {
+//            Application->ShowMainForm = false;
+//            gSplashForm->Show();
+//            gSplashForm->Update();
+//        }
+//        else
+//        {
+//            gSplashForm->Close();
+//        }
 
         TStyleManager::TrySetStyle(gDefaultAppTheme.c_str());
 		Application->Title = "iBot";

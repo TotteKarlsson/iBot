@@ -9,7 +9,7 @@
 #pragma comment(lib, "DuneForms.bpi")
 //#pragma comment(lib, "DSLVCL.bpi")
 
-#pragma comment(lib, "iBotPackage.bpi")
+//#pragma comment(lib, "iBotPackage.bpi")
 
 
 

@@ -110,8 +110,8 @@
         <Manifest_File>None</Manifest_File>
     </PropertyGroup>
     <ItemGroup>
-        <CppCompile Include="amlUtilities.cpp">
-            <DependentOn>amlUtilities.h</DependentOn>
+        <CppCompile Include="ibUtilities.cpp">
+            <DependentOn>ibUtilities.h</DependentOn>
             <BuildOrder>3</BuildOrder>
         </CppCompile>
         <BuildConfiguration Include="Release">
