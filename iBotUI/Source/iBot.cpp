@@ -105,7 +105,8 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 //            gSplashForm->Close();
 //        }
 
-        TStyleManager::TrySetStyle(gDefaultAppTheme.c_str());
+//        TStyleManager::TrySetStyle(gDefaultAppTheme.c_str());
+		TStyleManager::TrySetStyle("Amakrits");
 		Application->Title = "iBot";
         Application->ProcessMessages();
 		Application->CreateForm(__classid(TMainForm), &MainForm);

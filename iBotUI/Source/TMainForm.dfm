@@ -124,7 +124,7 @@ object MainForm: TMainForm
       Top = 1
       Width = 941
       Height = 545
-      ActivePage = TabSheet4
+      ActivePage = TabSheet2
       Align = alClient
       TabOrder = 0
       object TabSheet4: TTabSheet
@@ -364,7 +364,7 @@ object MainForm: TMainForm
                 object DBGrid1: TDBGrid
                   Left = 23
                   Top = 55
-                  Width = 320
+                  Width = 882
                   Height = 120
                   DataSource = atDM.mRibbonDSource
                   TabOrder = 1
